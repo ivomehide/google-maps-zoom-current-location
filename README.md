@@ -115,7 +115,7 @@ Prop | Description
 `errorCallback`|Optional. An optional callback function that takes a [GeolocationPositionError](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError) object as an input parameter.
 `options`|Optional. An optional [PositionOptions](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions) object that provides configuration options for the location watch.
 
-#### 4. zoomLevel
+#### 5. zoomLevel
 If set, then map will be zoomed to the specified level after the map is centered to marker position.  
 Default value is *null*.
 
