@@ -14,7 +14,11 @@ type Options = {
   /**
    * If set, then map will be zoomed to specified level during map centering
    */
-  zoomLevel?: number
+  zoomLevel?: number,
+  /**
+   * Event listeners for outer circle
+   */
+  listeners?: {[eventName: string]: () => void}
 }
 
 export default class LocationMarker {
@@ -69,6 +73,11 @@ export default class LocationMarker {
       fillOpacity: 0.1,
       strokeWeight: 0,
     });
+    if (this.options.listeners && this.outerCircle) {
+      for (const [eventName, listener] of Object.entries(this.options.listeners)) {
+        this.outerCircle.addListener(eventName, listener);
+      }
+    }
 
     this.innerCircle.addListener('position_changed', () => {
       const position = this.innerCircle?.position;

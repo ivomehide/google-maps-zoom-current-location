@@ -10,7 +10,8 @@ export type Options = {
   markerStyle?: MarkerStyle,
   showAccuracyRadius?: boolean,
   watchPositionFn?: WatchPositionFnType,
-  zoomLevel?: number
+  zoomLevel?: number,
+  listeners?: {[eventName: string]: () => void},
 }
 
 /**

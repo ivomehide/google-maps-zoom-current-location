@@ -63,6 +63,7 @@ Check out how to configure it [here](https://developers.google.com/maps/document
 - [showAccuracyRadius](#3-showAccuracyRadius): boolean
 - [watchPositionFn](#4-watchPositionFn): function
 - [zomLevel](#5-zoomLevel): number
+- [listeners](#6-listeners): {[eventName: string]: () => void}
 
 #### 1. buttonStyle
 Configures the css and positioning of the button displayed over the map.
@@ -117,6 +118,10 @@ Prop | Description
 
 #### 5. zoomLevel
 If set, then map will be zoomed to the specified level after the map is centered to marker position.  
+Default value is *null*.
+
+#### 6. listeners
+If set, then all evnt handlers listed here will be attached to the marker's outer circle.
 Default value is *null*.
 
 
