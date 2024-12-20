@@ -62,6 +62,7 @@ Check out how to configure it [here](https://developers.google.com/maps/document
 - [markerStyle](#2-markerStyle): object
 - [showAccuracyRadius](#3-showAccuracyRadius): boolean
 - [watchPositionFn](#4-watchPositionFn): function
+- [zomLevel](#5-zoomLevel): number
 
 #### 1. buttonStyle
 Configures the css and positioning of the button displayed over the map.
@@ -113,6 +114,11 @@ Prop | Description
 `successCallback`|Required. A callback function that takes a [GeolocationPosition](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition) object as an input parameter.
 `errorCallback`|Optional. An optional callback function that takes a [GeolocationPositionError](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError) object as an input parameter.
 `options`|Optional. An optional [PositionOptions](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions) object that provides configuration options for the location watch.
+
+#### 4. zoomLevel
+If set, then map will be zoomed to the specified level after the map is centered to marker position.  
+Default value is *null*.
+
 
 Examples
 --------------------------------------------------------------------------------

@@ -10,7 +10,11 @@ type Options = {
   /**
    * If true, a shape that grows with position accuracy is showed
    */
-  showAccuracyRadius?: boolean
+  showAccuracyRadius?: boolean,
+  /**
+   * If set, then map will be zoomed to specified level during map centering
+   */
+  zoomLevel?: number
 }
 
 export default class LocationMarker {
@@ -92,6 +96,7 @@ export default class LocationMarker {
 
     if (moveToCenter) {
       this.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+      if (this.options.zoomLevel) this.map.setZoom(this.options.zoomLevel);
     }
   }
 
@@ -102,6 +107,7 @@ export default class LocationMarker {
     const pos = this.innerCircle?.position;
     if (pos) {
       this.map.setCenter(pos);
+      if (this.options.zoomLevel) this.map.setZoom(this.options.zoomLevel);
     }
   }
 }
